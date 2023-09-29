@@ -1,0 +1,629 @@
+﻿@using System
+@using System
+@using System.Globalization;
+@using System.Collections.Generic
+@using System.Linq;
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe QB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        .main-table {
+            /*width: fit-content;*/
+            margin: 0px -20px -20px -20px;
+            padding: 5px;
+            font-family: "Roboto", sans-serif;
+            background-color: #fff;
+        }
+
+        .table-border {
+            border: 1px solid #999;
+            padding: 12px;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        .table-column-brd {
+            border: 1px solid #999;
+            padding: 12px 12px 27px;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+            .table-column-brd tr:not(:first-child) td:last-child p {
+                margin: 0;
+                border: 1px solid #ddd;
+                padding: 5px 10px;
+                text-align: right;
+                border-radius: 4px;
+                font-family: "Roboto", sans-serif;
+            }
+
+        tr {
+            page-break-inside: avoid;
+        }
+    </style>
+</head>
+
+<body style="background-color: white;">
+    <table class="main-table" border-spacing="0" cellpadding="0" cellspacing="0" style="
+       ">
+        <tr>
+            <td colspan="2" style="font-size: 11px;color:#000;font-family: 'Roboto', sans-serif;">
+                <span style="color:#ccc;font-family: 'Roboto', sans-serif;">QB TOKEN:</span>
+                @*864573645364_89475934875_487293494344554455498 (Not available)*@
+                N/A
+            </td>
+        </tr>
+        <tr>
+            <td align="justify">
+                <span style="background: linear-gradient(90deg, rgba(193, 139, 64, 0) -30%, rgba(193, 57, 19, 1) 27%, rgba(36, 112, 230, 1) 46%, rgba(62, 200, 159, 1) 72%, rgba(47, 237, 237, 1) 100%, rgba(245, 250, 255, 1) 100%);
+            height:1px;width:565px;display:block;"></span>
+            </td>
+            <td align="right"
+                style="font-family: 'Roboto', sans-serif;letter-spacing: 3px;font-size:25px;color:#000;font-weight:600;width:136px; padding-left:15px;">
+                47BILLION
+            </td>
+        </tr>
+    </table>
+
+    <table class="main-table" border-spacing="0" cellpadding="0" cellspacing="0" style="margin-top : 20px
+       ">
+        <tr>
+            <td colspan="2">
+                <table style="width:100%;">
+                    <tr>
+                        <td align="center" style="width:50%;text-align: left;">
+                            <p style="color:#ccc;font-size: 17px;margin:0;font-family: 'Roboto', sans-serif;">
+                                Calificada
+                                Informe del prestatario
+                            </p>
+                            <p style="margin:0;letter-spacing:1px;font-size:25px;color:#000;font-weight:600;font-family: 'Roboto', sans-serif;">
+                                @Model.Consumer?.FirstName @Model.Consumer?.LastName
+                            </p>
+                        </td>
+                        <td align="center" style="width:50%;padding:20px 0 20px 10px;text-align:left;">
+                            <table class="table-border" style="">
+                                <tr>
+                                    <td colspan="2"
+                                        style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(93,31,201,1) 0%, rgba(180,78,218,1) 100%);
+                                    padding:6px 10px 7px;border-radius:4px;color:#fff;font-size: 13px; font-family: 'Roboto', sans-serif;">
+                                        Informe
+                                        Información
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px 0 5px 0; font-size: 11px; font-family: 'Roboto', sans-serif;">
+                                        ID de informe
+                                    </td>
+                                    <td style="padding: 8px 0 5px 0; font-size: 11px; font-family: 'Roboto', sans-serif;">
+                                        N/A
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:8px 0 5px 0;font-size: 11px;font-family: 'Roboto', sans-serif;">
+                                        Fecha del informe
+                                    </td>
+                                    <td style="padding:8px 0 5px 0;font-size: 11px;font-family: 'Roboto', sans-serif;">
+                                        N/A
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:5px 0;font-size: 11px;font-family: 'Roboto', sans-serif;">
+                                        Correo electrónico
+                                    </td>
+                                    <td style="padding:5px 0;font-size: 11px;font-family: 'Roboto', sans-serif;">
+                                        @Model.Consumer?.Email[0]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:5px 15px 5px 0;font-size: 11px;white-space:nowrap;font-family: 'Roboto', sans-serif;">
+                                        Número de teléfono
+                                    </td>
+                                    <td style="padding:5px 0;font-size: 11px;font-family: 'Roboto', sans-serif;">
+                                        @Model.Consumer?.PhoneNumber
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:5px 0;font-size: 11px;vertical-align: text-top;font-family: 'Roboto', sans-serif;">
+                                        Dirección
+                                    </td>
+                                    <td style="padding:5px 0;font-size: 11px;font-family: 'Roboto', sans-serif;">
+                                        @Model.Consumer?.Address?.Street
+                                        @Model.Consumer?.Address?.Street2
+                                        @Model.Consumer?.Address?.City, @Model.Consumer?.Address?.Region
+                                        @Model.Consumer?.Address?.Country, @Model.Consumer?.Address?.PostalCode
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table style="width:100%;">
+                    <tr>
+                        <td style="width:50%;padding-right:10px;vertical-align:text-top;">
+                            <table class="table-column-brd"
+                                   style="">
+                                <tr>
+                                    <td colspan="2"
+                                        style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(93,31,201,1) 0%, rgba(180,78,218,1) 100%);
+                                    padding:6px 10px 7px;border-radius:4px;color:#fff;font-size: 13px;font-family: 'Roboto', sans-serif;">
+                                        Análisis ATP
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:8px 0 5px 0;font-size: 11px;font-family: 'Roboto', sans-serif;">
+                                        Índice RIKI
+                                    </td>
+                                    <td style="padding:8px 0 5px 0;font-size: 11px;font-family: 'Roboto', sans-serif;">
+                                        <p style="">
+                                            @Model.RikiData?.RIKI
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:5px 0;font-size: 11px;font-family: 'Roboto', sans-serif;">
+                                        RIKI
+                                        Tendencia
+                                    </td>
+                                    <td style="padding:5px 0;font-size: 11px;font-family: 'Roboto', sans-serif;">
+                                        <p>
+                                            @Model.RikiData?.RIKIasWords
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:5px 15px 5px 0;font-size: 11px;white-space:nowrap;font-family: 'Roboto', sans-serif;">
+                                        Flujo de caja
+                                        Índice
+
+                                    </td>
+                                    <td style="padding:5px 0;font-size: 11px;">
+                                        <p>
+                                            @Model.RikiData?.CashFlowIndex
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:5px 0;font-size: 11px;vertical-align: text-top;white-space:nowrap;font-family: 'Roboto', sans-serif;">
+                                        Tendencia del índice de flujo de efectivo
+                                    </td>
+                                    <td style="padding:5px 0;font-size: 11px;font-family: 'Roboto', sans-serif;">
+                                        <p>
+                                            @Model.RikiData?.CashFlowIndexTrend
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-family: 'Roboto', sans-serif;padding:5px 0;font-size: 11px;vertical-align: text-top;white-space:nowrap;">
+                                        Puntuación FICO
+                                    </td>
+                                    <td style="font-family: 'Roboto', sans-serif;padding:5px 0;font-size: 11px;">
+                                        <p>
+                                            N/A
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="width:50%;padding-left:10px;white-space:nowrap;vertical-align:text-top;">
+                            <table style="border:1px solid #999;padding: 12px;border-radius: 10px;width:100%;">
+                                <tr>
+                                    <td colspan="2"
+                                        style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(93,31,201,1) 0%, rgba(180,78,218,1) 100%);
+                                    padding:6px 10px 7px;border-radius:4px;color:#fff;font-size: 13px;font-family: 'Roboto', sans-serif;">
+                                        Análisis de ingresos
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:8px 0 5px 0;font-size: 11px;font-family: 'Roboto', sans-serif;">
+                                        Ingreso mensual típico
+                                    </td>
+                                    <td style="padding:8px 0 5px 0;font-size: 11px;font-family: 'Roboto', sans-serif;">
+                                        <p style="font-family: 'Roboto', sans-serif;margin:0;border:1px solid #ddd;padding:5px 10px;text-align:right;border-radius:4px;">
+                                            $ @Model.RikiData?.TypicalMonthsTotalIncome
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:5px 15px 5px 0;font-size: 11px;font-family: 'Roboto', sans-serif;">
+                                        Ingreso residual mensual típico
+                                    </td>
+                                    <td style="padding:5px 0;font-size: 11px;">
+                                        <p style="font-family: 'Roboto', sans-serif;margin:0;border:1px solid #ddd;padding:5px 10px;text-align:right;border-radius:4px;">
+                                            ($ @Model.RikiData?.TypicalMonthsAdjustedAvailableIncome)
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:5px 15px 5px 0;font-size: 11px;white-space:nowrap;font-family: 'Roboto', sans-serif;">
+                                        Vivienda
+                                        Capacidad de pago
+
+                                    </td>
+                                    <td style="padding:5px 0;font-size: 11px;">
+                                        <p style="font-family: 'Roboto', sans-serif;margin:0;border:1px solid #ddd;padding:5px 10px;text-align:right;border-radius:4px;">
+                                            N/A
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:5px 0;font-size: 11px;vertical-align: text-top;font-family: 'Roboto', sans-serif;">
+                                        Mes a mes
+                                        Puntuación de estabilidad
+                                    </td>
+                                    <td style="padding:5px 0;font-size: 11px;">
+                                        <p style="font-family: 'Roboto', sans-serif;margin:0;border:1px solid #ddd;padding:5px 10px;text-align:right;border-radius:4px;">
+                                            @Model.RikiData?.MonthToMonthStabilityScore
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-family: 'Roboto', sans-serif;padding:5px 0;font-size: 11px;vertical-align: text-top;">
+                                        Ingresos mensuales
+                                        Tendencia
+                                    </td>
+                                    <td style="padding:5px 0;font-size: 11px;">
+                                        <p style="font-family: 'Roboto', sans-serif;white-space:normal;margin:0;border:1px solid #ddd;padding:5px 10px;text-align:right;border-radius:4px;">
+                                            @Model.RikiData?.TotalMonthlyIncomeTrend
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-family: 'Roboto', sans-serif;padding:5px 0;font-size: 11px;vertical-align: text-top;">
+                                    </td>
+
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding:20px 0 30px;">
+                <table style="width:100%">
+                    <tr>
+                        <td style="font-family: 'Roboto', sans-serif;line-height:18px;font-size:12px;padding:10px;border:1px solid #999;border-radius:4px;background-color:#e8e8e8;">
+                            <span style="display:block;font-family: 'Roboto', sans-serif;">
+                                RIKI (Ingreso residual
+                                Índice de conocimiento) - Combinación ponderada
+                                de flujo de caja e ingresos disponibles
+                            </span>
+                            <span style="display:block;font-family: 'Roboto', sans-serif;">
+                                Índice de flujo de efectivo
+                                - Cuánto tiempo se tarda en gastar los ingresos de un mes.
+                                100 si exactamente un mes. Más alto es mejor.
+                            </span>
+                            <span style="display:block;font-family: 'Roboto', sans-serif;">
+                                Puntuación de estabilidad mes a mes
+                                - Escala centrada en 100
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2">
+                <span style="background: linear-gradient(90deg, rgba(193, 139, 64, 0) -30%, rgba(193, 57, 19, 1) 27%, rgba(36, 112, 230, 1) 46%, rgba(62, 200, 159, 1) 72%, rgba(47, 237, 237, 1) 100%, rgba(245, 250, 255, 1) 100%);
+            height:1px;width:720px;display:block;"></span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding-top:30px;">
+                <table style="width:100%;">
+                    <td style="width:60%;padding-right:10px;vertical-align:text-top;">
+                        <table style="border:1px solid #999;padding: 12px 12px 12px;border-radius: 10px;width:100%;">
+                            <tr>
+                                <td colspan="2" style="font-family: 'Roboto', sans-serif;background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(93,31,201,1) 0%, rgba(180,78,218,1) 100%);
+                                        padding:6px 10px 7px;border-radius:4px;color:#fff;font-size: 13px;">
+                                    Empleo
+                                    Datos
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:50%;padding-top:8px;">
+                                    <p style="font-family: 'Roboto', sans-serif;padding:5px 10px;font-weight:600;margin:0;border:1px solid #5d1fc9;border-radius:4px;color:#5d1fc9;font-size: 11px;">
+                                        Empleador
+                                    </p>
+                                </td>
+                                <td style="width:50%">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px 0 5px 0;font-size: 11px;font-family: 'Roboto', sans-serif;">
+                                    DD
+                                    Nombre del empleador
+                                </td>
+                                <td style="padding:8px 0 5px 0;font-size:11px;">
+                                    <p style="font-family: 'Roboto', sans-serif;margin:0;border:1px solid #ddd;padding:5px 10px;text-align:right;border-radius:4px;">
+                                        N/A
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:5px 15px 5px 0;font-size: 11px;white-space:nowrap;font-family: 'Roboto', sans-serif;">
+                                    Último
+                                    Fecha de depósito
+                                </td>
+                                <td style="padding:5px 0;font-size: 11px;">
+                                    <p style="font-family: 'Roboto', sans-serif;margin:0;border:1px solid #ddd;padding:5px 10px;text-align:right;border-radius:4px;">
+                                        N/A
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-family: 'Roboto', sans-serif;padding:5px 15px 5px 0;font-size: 11px;white-space:nowrap;">
+                                    Último
+                                    Monto del depósito
+                                </td>
+                                <td style="padding:5px 0;font-size: 11px;">
+                                    <p style="font-family: 'Roboto', sans-serif;margin:0;border:1px solid #ddd;padding:5px 10px;text-align:right;border-radius:4px;">
+                                        N/A
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-family: 'Roboto', sans-serif;padding:5px 0;font-size: 11px;vertical-align: text-top;white-space:nowrap;">
+                                    Frecuencia de pago
+                                </td>
+                                <td style="padding:5px 0;font-size: 11px;">
+                                    <p style="font-family: 'Roboto', sans-serif;margin:0;border:1px solid #ddd;padding:5px 10px;text-align:right;border-radius:4px;">
+                                        N/A
+                                    </p>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </td>
+                    <td style="width:40%;"></td>
+                </table>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding:25px 0 0">
+                <table style="width:100%">
+                    <tr>
+                        <td style="line-height:18px;font-size:12px;padding:10px;border:1px solid #999;border-radius:4px;background-color:#e8e8e8;">
+                            <span style="display:block;font-family: 'Roboto', sans-serif;">
+                                *El nombre del empleador de datos públicos es
+                                El nombre comercial que corrobora
+                                devuelto de la base de datos LexisNexis, Top Business Search
+                            </span>
+                            <span style="display:block;font-family: 'Roboto', sans-serif;">
+                                **El puntaje de confianza es
+                                determinado por la identificación de la
+                                transacciones de depósito, extracción y validación del nombre del empleador, y
+                                Validar al empleador como un negocio operativo.
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding-top:30px;">
+                <table style="border:1px solid #999;padding: 12px 12px 12px;border-radius: 10px;width:100%;">
+
+                    @{
+                        int depositeCount = 0;
+                        DateTime firstDirectDate = DateTime.MinValue ;
+
+                        <tr>
+                            <td style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(93,31,201,1) 0%, rgba(180,78,218,1) 100%);
+                                padding:6px 10px 7px;border-radius:4px;color:#fff;font-size: 13px;font-family: 'Roboto', sans-serif;">
+                                Flujo de depósito - N/A
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:12px 0 8px;">
+                                <p style="color:#666;font-size: 11px;margin:0;font-family: 'Roboto', sans-serif;">
+
+                                    @if (@Model.GroupedTransactions.Count > 0 && @Model.GroupedTransactions != null)
+                                    {
+                                            //@foreach (var grouptransaction in @Model.GroupedTransactions)
+                                            //{
+                                            //    @if (@grouptransaction.GroupedAccountData.Count > 0 && @grouptransaction.GroupedAccountData != null)
+                                            //    {
+                                            //        @foreach (var groupaccountdata in grouptransaction.GroupedAccountData)
+                                            //        {
+                                            //            firstDirectDate = ((IEnumerable<dynamic>)groupaccountdata.Transactions).OrderBy(x => x.Date).First();
+                                            //            depositeCount += (int)@groupaccountdata.Transactions.Count;
+                                            //        }
+                                            //    }
+                                            //}
+
+                                        //firstDirectDate = Model.GroupedTransactions
+                                        //.Where(gt => gt.GroupedAccountData?.Any() == true)
+                                        //.SelectMany(gt => gt.GroupedAccountData)
+                                        //.SelectMany(gad => ((IEnumerable<dynamic>)gad.Transactions).OrderBy(x => x.Date).Take(1))
+                                        //.First();
+
+                                        firstDirectDate = ((IEnumerable<dynamic>)Model.GroupedTransactions)
+                                        .Where(gt => ((IEnumerable<dynamic>)gt.GroupedAccountData)?.Count() > 0)
+                                        .SelectMany(gt => ((IEnumerable<dynamic>)gt.GroupedAccountData))
+                                        .SelectMany(gad => ((IEnumerable<dynamic>)gad.Transactions).Where(z => z.Action != "debit").OrderBy(x => x.Date).Take(1).Select(z => z.Date))
+                                        .FirstOrDefault();
+                                        
+                                    depositeCount = ((IEnumerable<dynamic>
+                                        )Model.GroupedTransactions)
+                                        .Where(gt => ((IEnumerable<dynamic>
+                                            )(gt.GroupedAccountData))?.Any() == true)
+                                            .SelectMany(gt => ((IEnumerable<dynamic>
+                                                )gt.GroupedAccountData))
+                                                .Sum(gad => ((IEnumerable<dynamic>
+                                        )gad.Transactions).Where(z => z.Action != "debit").Count());
+
+
+                                       
+                                    }
+
+                                    Número de
+                                    Depósitos: <span>@depositeCount</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0 0 12px;">
+                                <p style="color:#666;font-size: 11px;margin:0;font-family: 'Roboto', sans-serif;">
+                                    Primera Directa
+                                    Fecha de depósito:
+                          
+                                        <span>@firstDirectDate.ToShortDateString()</span>
+            
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table style="width:100%;border-spacing: 5px;">
+                                    <tr>
+                                        <th style="font-family: 'Roboto', sans-serif;text-align:left;font-weight:500;border-radius:4px;padding:5px 10px;
+                                background-color:#919191;color:#fff;font-size: 11px;">Date</th>
+                                        <th style="font-family: 'Roboto', sans-serif;text-align:left;font-weight:500;border-radius:4px;padding:5px 10px;
+                                background-color:#919191;color:#fff;font-size: 11px;">Account</th>
+                                        <th style="font-family: 'Roboto', sans-serif;text-align:left;font-weight:500;border-radius:4px;padding:5px 10px;
+                                background-color:#919191;color:#fff;font-size: 11px;">Description</th>
+                                        <th style="font-family: 'Roboto', sans-serif;text-align:left;font-weight:500;border-radius:4px;padding:5px 10px;
+                                background-color:#919191;color:#fff;font-size: 11px;">Amount</th>
+                                    </tr>
+                                    @if (@Model.GroupedTransactions.Count > 0 && @Model.GroupedTransactions != null)
+                                    {
+                                        @foreach (var grouptransaction in @Model.GroupedTransactions)
+                                        {
+                                            @if (@grouptransaction.GroupedAccountData.Count > 0 && @grouptransaction.GroupedAccountData != null)
+                                            {
+                                                @foreach (var groupaccountdata in grouptransaction.GroupedAccountData)
+                                                {
+                                                    @if (@groupaccountdata.Transactions.Count > 0 && @groupaccountdata.Transactions != null)
+                                                    {
+                                                        @foreach (var transaction in @groupaccountdata.Transactions)
+                                                        {
+                                                            @if (@transaction.Action != "debit")
+                                                            {
+                                                            <tr>
+                                                                <td style="font-family: 'Roboto', sans-serif;font-size: 11px;border-radius: 4px;
+                                border:1px solid #ddd;padding:5px 10px;">
+                                                                    @transaction.Date.ToShortDateString()
+                                                                </td>
+                                                                <td style="font-family: 'Roboto', sans-serif;font-size: 11px;border-radius: 4px;
+                                border:1px solid #ddd;padding:5px 10px;">
+                                                                    @groupaccountdata.AccountNumber
+                                                                </td>
+                                                                <td style="font-family: 'Roboto', sans-serif;font-size: 11px;border-radius: 4px;
+                                border:1px solid #ddd;padding:5px 10px;">
+                                                                    @transaction.Description
+                                                                </td>
+                                                                <td style="font-family: 'Roboto', sans-serif;font-size: 11px;border-radius: 4px;
+                                border:1px solid #ddd;padding:5px 10px;">
+                                                                    $@transaction.Amount
+                                                                </td>
+                                                            </tr>
+                                                        }
+
+                                    }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                </table>
+                            </td>
+                        </tr>
+                    }
+                </table>
+        </tr>
+        <tr>
+            <td align="center" colspan="2" style="padding:30px 0;">
+                <span style="background: linear-gradient(90deg, rgba(193, 139, 64, 0) -30%, rgba(193, 57, 19, 1) 27%, rgba(36, 112, 230, 1) 46%, rgba(62, 200, 159, 1) 72%, rgba(47, 237, 237, 1) 100%, rgba(245, 250, 255, 1) 100%);
+            height:1px;width:720px;display:block;"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <table style="border:1px solid #999;padding: 12px 12px 12px;border-radius: 10px;width:100%;">
+                    <tr>
+                        <td style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(93,31,201,1) 0%, rgba(180,78,218,1) 100%);
+                                padding:6px 10px 7px;border-radius:4px;color:#fff;font-size: 13px;font-family: 'Roboto', sans-serif;">
+                            Resumen de activos
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:12px 0 8px;">
+                            <p style="color:#666;font-size: 11px;margin:0;font-family: 'Roboto', sans-serif;">
+                                Número de
+                                Instituciones financieras conectadas:
+                                <span>N/A</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0 0 12px;">
+                            <p style="color:#666;font-size: 11px;margin:0;font-family: 'Roboto', sans-serif;">
+                                Número de
+                                Cuentas conectadas:
+                                <span>N/A</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table style="width:100%;border-spacing: 5px;">
+                                <tr>
+                                    <th style="font-family: 'Roboto', sans-serif;text-align:left;font-weight:500;border-radius:4px;padding:5px 10px;
+                                background-color:#919191;color:#fff;font-size: 11px;">Saldo actual total</th>
+                                    <th style="font-family: 'Roboto', sans-serif;text-align:left;font-weight:500;border-radius:4px;padding:5px 10px;
+                                background-color:#919191;color:#fff;font-size: 11px;">Saldo total disponible</th>
+                                    <th style="font-family: 'Roboto', sans-serif;text-align:left;font-weight:500;border-radius:4px;padding:5px 10px;
+                                background-color:#919191;color:#fff;font-size: 11px;">Saldo promedio de 30 días</th>
+                                    <th style="font-family: 'Roboto', sans-serif;text-align:left;font-weight:500;border-radius:4px;padding:5px 10px;
+                                background-color:#919191;color:#fff;font-size: 11px;">Saldo promedio de 60 días</th>
+                                    <th style="font-family: 'Roboto', sans-serif;text-align:left;font-weight:500;border-radius:4px;padding:5px 10px;
+                                background-color:#919191;color:#fff;font-size: 11px;">Saldo promedio de 90 días</th>
+                                </tr>
+                                <tr>
+                                    <td style="font-family: 'Roboto', sans-serif;font-size: 13px;border-radius: 4px;
+                                    border:1px solid #ddd;padding:5px 10px;">
+                                        N/A
+                                    </td>
+                                    <td style="font-family: 'Roboto', sans-serif;font-size: 13px;border-radius: 4px;
+                            border:1px solid #ddd;padding:5px 10px;">
+                                        N/A
+                                    </td>
+                                    <td style="font-family: 'Roboto', sans-serif;font-size: 13px;border-radius: 4px;
+                            border:1px solid #ddd;padding:5px 10px;">
+                                        N/A
+                                    </td>
+                                    <td style="font-family: 'Roboto', sans-serif;font-size: 13px;border-radius: 4px;
+                            border:1px solid #ddd;padding:5px 10px;">
+                                        N/A
+                                    </td>
+                                    <td style="font-family: 'Roboto', sans-serif;font-size: 13px;border-radius: 4px;
+                            border:1px solid #ddd;padding:5px 10px;">
+                                        N/A
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+        </tr>
+    </table>
+</body>
+
+</html>
